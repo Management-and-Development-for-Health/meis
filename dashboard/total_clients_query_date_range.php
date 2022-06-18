@@ -16,12 +16,12 @@ require_once'../config.php';
 			<center>Record Not Found</center>';
 		}
 	}else{
-		$query=mysqli_query($conn, "SELECT * FROM `clients`");
+		$query=mysqli_query($link, "SELECT * FROM `clients`");
         $row=mysqli_num_rows($query);
-		while($fetch=mysqli_fetch_array($query)){
+		
 ?>
 	<h4 class="text-c-purple"><?php echo htmlentities($row);?></h4>
 <?php
-		}
+	
 	}
 ?>

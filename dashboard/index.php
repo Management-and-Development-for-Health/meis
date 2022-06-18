@@ -102,7 +102,7 @@ else{
                                         </div>
                             
                                         <div class="col" style=" margin-right: 20px; font-weight: bold;">
-                                            <input type="submit" name="search" value="Show data" class="btn btn-sm btn-primary " style="height: 38px;">
+                                            <input type="submit" name="search" value="Show data" class="btn btn-sm btn-primary " style="height: 38px;">  <a href="index.php"  class="btn btn-sm btn-success " style="height: 38px;">Reset</a>
                                         </div>
                                     </div>
                                     
@@ -115,7 +115,7 @@ else{
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col-8">
-                                                            <?php include('dates_queries.php');?>
+                                                            <?php include('total_clients_query_date_range.php');?>
                                                                 
                                                                 <h6 class="text-muted m-b-0"> Clients</h6>
                                                             </div>
@@ -142,13 +142,7 @@ else{
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col-8">
-                                                            <?php 
-                   $query=mysqli_query($link,"select  COUNT(uic)  from visits  where aina_ya_hudhurio in ('mpya')and amepima_na_kupewa_majibu = 'hasi' and MONTH(tarehe_ya_hudhurio) = MONTH(CURRENT_DATE())
-                   AND YEAR(tarehe_ya_hudhurio) = YEAR(CURRENT_DATE())  GROUP BY  uic" );
-                               $num1 = mysqli_num_rows($query);
-                                     {?>
-                                     <h4 class="text-c-purple"><?php echo htmlentities($num1);?></h4>
-                                       <?php }?>
+                                                            <?php include('total_prep_new_query_date.php');?>
                                                                 <h6 class="text-muted m-b-0">PrEP New</h6>
                                                             </div>
                                                             <div class="col-4 text-right">
