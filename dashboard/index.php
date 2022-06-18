@@ -167,16 +167,7 @@ else{
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col-8">
-                                                            <?php 
-                                                            //    $query1=mysqli_query($link,"select  COUNT(uic)  from visits  where aina_ya_hudhurio in ('mpya')and amepima_na_kupewa_majibu = 'hasi' and MONTH(tarehe_ya_hudhurio) = MONTH(CURRENT_DATE())
-                                                            //    AND YEAR(tarehe_ya_hudhurio) = YEAR(CURRENT_DATE()) GROUP BY  uic");
-                                                            //                $num1 = mysqli_num_rows($query1);
-                   $query2=mysqli_query($link,"select  COUNT(uic)  from visits  where MONTH(tarehe_ya_hudhurio) = MONTH(CURRENT_DATE()) GROUP BY  uic");
-                               $num2 = mysqli_num_rows($query2);
-                            //    $total = $num1 + $num2;
-                                     {?>
-                                     <h4 class="text-c-purple"><?php echo htmlentities($num2);?></h4>
-                                       <?php }?>
+                                                            <?php include('total_prep_ct_query_date.php');?>
                                                                 <h6 class="text-muted m-b-0">PrEP CT</h6>
                                                             </div>
                                                             <div class="col-4 text-right">

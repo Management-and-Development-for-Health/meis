@@ -13,7 +13,7 @@ require_once'../config.php';
 		
 		}else{
 			echo'
-			<center>Record Not Found</center>';
+			<center>Clients Not Found</center>';
 		}
 	}else{
 		$query=mysqli_query($link, "SELECT * FROM `clients`");
