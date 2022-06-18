@@ -76,7 +76,7 @@ else{
                                 <div class="page-wrapper">
                                     <!-- Page-body start -->
                                     <div class="page-body">
-                                    <form method="post" action="dashboard.php" name="filter" style="margin-top:5px;">
+                                    <form method="post" action="" name="filter" style="margin-top:5px;">
                                     <div class="row"> 
                                 
 
@@ -86,7 +86,7 @@ else{
 													<div class="input-group-text">
 														From
 													</div>
-												</div><input type="date" name="StartDate" placeholder="StartDate" class="input-append date form_datetime form-control ">
+												</div><input type="date" name="date1" value="<?php echo isset($_POST['date1']) ? $_POST['date1'] : '' ?>" placeholder="StartDate" class="input-append date form_datetime form-control ">
 											</div>
                                             <!-- <input type="text" name="StartDate" placeholder="StartDate" class="input-append date form_datetime form-control " readonly /> -->
                                         </div>
@@ -96,13 +96,13 @@ else{
 													<div class="input-group-text">
 														To
 													</div>
-												</div><input type="date" name="EndDate" placeholder="EndDate" class="input-append date form_datetime form-control ">
+												</div><input type="date" name="date2" value="<?php echo isset($_POST['date2']) ? $_POST['date2'] : '' ?>" placeholder="EndDate" class="input-append date form_datetime form-control ">
 											</div>
                                             <!-- <input type="text" name="EndDate" placeholder="EndDate" class="input-append date form_datetime form-control " readonly /> -->
                                         </div>
                             
                                         <div class="col" style=" margin-right: 20px; font-weight: bold;">
-                                            <input type="submit" name="btnView" value="Show data" class="btn btn-sm btn-primary " style="height: 38px;">
+                                            <input type="submit" name="search" value="Show data" class="btn btn-sm btn-primary " style="height: 38px;">
                                         </div>
                                     </div>
                                     
@@ -115,13 +115,7 @@ else{
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col-8">
-                                                            <?php 
-                   include('../config.php');
-                   $query=mysqli_query($link,"select * from clients");
-                               $num1 = mysqli_num_rows($query);
-                                     {?>
-                                     <h4 class="text-c-purple"><?php echo htmlentities($num1);?></h4>
-                                       <?php }?>
+                                                            <?php include('dates_queries.php');?>
                                                                 
                                                                 <h6 class="text-muted m-b-0"> Clients</h6>
                                                             </div>
