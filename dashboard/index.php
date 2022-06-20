@@ -187,24 +187,24 @@ else{
                                                     </div>
                                                 </div>
                                             </div>
-                                      
-                                            <!-- <div class="col-xl-3 col-md-6">
+                                    
+                                            <div class="col-xl-3 col-md-6">
                                                 <div class="card">
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col-8">
                                                                 <h4 class="text-c-red">145</h4>
-                                                                <h6 class="text-muted m-b-0">Target</h6>
+                                                                <h6 class="text-muted m-b-0"> Providers</h6>
                                                             </div>
                                                             <div class="col-4 text-right">
                                                             <i class="fa fa-hand-o-up f-28"></i>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="card-footer bg-c-red">
+                                                    <div class="card-footer bg-c-purple">
                                                         <div class="row align-items-center">
                                                             <div class="col-9">
-                                                                <p class="text-white m-b-0">PrEP New Target</p>
+                                                                <p class="text-white m-b-0">Registered Provider</p>
                                                             </div>
                                                             <div class="col-3 text-right">
                                                                 <i class="fa fa-line-chart text-white f-16"></i>
@@ -212,16 +212,17 @@ else{
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div> -->
+                                            </div>
                                         
                                             <!-- task, page, download counter  end -->
                                    
                                         </div>
-                                        <?php 
-                                        
-                                        include('clients/index.php');
-                                        include('prep_new/index.php');
-                                        include('prep_ct/index.php');?>
+                                        <div class="row">
+                       <?php include('prep_new_summary.php'); include('prep_ct_summary.php')
+                       ;?>
+                            
+                                        </div>
+                                    
                                     </div>
                                     <!-- Page-body end -->
                                 </div>
