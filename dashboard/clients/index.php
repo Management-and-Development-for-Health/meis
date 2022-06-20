@@ -83,13 +83,7 @@
                                                                         <tr>
                                                                         <td>FSW </td>
                                                                         <td> 
-                                                                        <?php 
-                   $query2=mysqli_query($link,"SELECT COUNT(id)  from clients where kvp_group = 'FSW' GROUP BY id");
-                               $num2 = mysqli_num_rows($query2);
-                            //    $total = $num1 + $num2;
-                                     {
-                                        ?>
-                                     <?php  echo htmlentities($num2);}?></td>
+                                                                        <?php include('clients_table.php');?></td>
 
                                      <td>  <?php 
                    $query2=mysqli_query($link,"SELECT COUNT(id)  from clients where kvp_group = 'FSW' and ((YEAR(CURRENT_DATE())-YEAR(dob)) > 14 and (YEAR(CURRENT_DATE())-YEAR(dob)) < 20) and gender = 1 GROUP BY id");
