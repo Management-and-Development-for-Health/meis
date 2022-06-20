@@ -33,7 +33,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <button class="btn btn-primary btn-block">Download Overall Report</button>
+                                                    <div class="card-footer bg-c-green">
+                                                        <div class="row align-items-center">
+                                                            <div class="col-9">
+                                                                <p class="text-white m-b-0">Export patient level data to verify</p>
+                                                            </div>
+                                                            <div class="col-3 text-right">
+                                                                <i class="fa fa-file-excel-o text-white f-16"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 
                                             </div>
