@@ -5,7 +5,7 @@
                                                         <h6 class="m-b-15">PrEP CT</h6>
                                                         <h2 class="m-b-0 text text-success"><?php echo htmlentities($total_count_prep_ct);?></h2>
                                                         <h6 class="m-b-10 m-t-10">Based on KVP groups</h6>
-                                                        <a href="#!" class="text-c-blue b-b-primary">Export patient level data</a>
+                                                        <a href="../individual-report/" class="text-c-blue b-b-primary">Export patient level data</a>
                                                         <div class="row justify-content-center m-t-10 b-t-default m-l-0 m-r-0">
                                                             <div class="col m-t-15 b-r-default">
                                                                 <h6 class="text-muted">FSW</h6>

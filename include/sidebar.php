@@ -59,6 +59,7 @@
                             <span class="pcoded-mcaret"></span>
                           </a>
                                         </li>
+                                        
                                       
                                     </ul>
                                 </li>
@@ -91,7 +92,13 @@
                             <span class="pcoded-mcaret"></span>
                           </a>
                                         </li>
-                                    
+                                        <li class=" ">
+                                            <a href="../provider-list/" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Providers</span>
+                            <span class="pcoded-mcaret"></span>
+                          </a>
+                                        </li>
 
                                     </ul>
                                 </li>
@@ -132,13 +139,13 @@
                             <span class="pcoded-mcaret"></span>
                           </a>
                                         </li>
-                                        <li class=" ">
+                                        <!-- <li class=" ">
                                             <a href="../aggregate-export/" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext">Aggregate</span>
                             <span class="pcoded-mcaret"></span>
                           </a>
-                                        </li>
+                                        </li> -->
                                         
                         
                                      
@@ -166,6 +173,13 @@
                                             <a href="../offline-backup/" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext">Offline Backup</span>
+                            <span class="pcoded-mcaret"></span>
+                          </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="../offline-backup/" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext">Online Backup</span>
                             <span class="pcoded-mcaret"></span>
                           </a>
                                         </li>
