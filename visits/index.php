@@ -348,7 +348,7 @@ while($row=mysqli_fetch_array($query))
 
 <div class="col-sm-12 col-xl-4 m-b-30">
 <h4 class="sub-title">Aina ya Dawa PrEP aliyopewa</h4>
-<input type="text" value="Truvada" name="aina_ya_dawa_PrEP_aliyopewa" disabled class="form-control" id="hide_dawa">
+<input type="text" value="Truvada" name="aina_ya_dawa_PrEP_aliyopewa"  class="form-control" id="hide_dawa">
 </div>
 <div class="col-sm-12 col-xl-4 m-b-30">
 <h4 class="sub-title">Namba ya Vidonge Alivyopewa</h4>
@@ -662,7 +662,7 @@ function hudhurio() {
      } 
      else if (mselectvalue == "amehamia") {
         $('select[name="hali_ya_PrEP_mahudhurio"]:first').val('ametoka clinic nyingine') ;
-        document.getElementById("hali_ya_PrEP").disabled = true;
+        document.getElementById("hali_ya_PrEP").disabled = false;
      }
      else if (mselectvalue == "") {
         $('select[name="hali_ya_PrEP_mahudhurio"]:first').val('') ;
