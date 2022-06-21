@@ -154,14 +154,14 @@ $vidonge = $row['namba_ya_vidonge_alivyopewa'];
  
     $orderQuery = "
 	SELECT visits.uic, clients.kvp_group, visits.tarehe_ya_hudhurio_lijalo, clients.gender, visits.created_at, visits.namba_ya_vidonge_alivyopewa, clients.dob, visits.tarehe_ya_hudhurio, MAX(visits.tarehe_ya_hudhurio) as last_visit, MAX(tarehe_ya_hudhurio_lijalo) as next_visit, visits.mahali, visits.jina_la_mtoa_huduma FROM visits join clients on clients.uic = visits.uic
-	WHERE visits.hali_ya_PrEP_mahudhurio = 'mpya'  and (visits.tarehe_ya_hudhurio >= '".$_POST['fromDate']."' and visits.tarehe_ya_hudhurio <= '".$_POST['toDate']."') OR (visits.tarehe_ya_hudhurio_lijalo >= '".$_POST['fromDate']."' and visits.tarehe_ya_hudhurio_lijalo <= '".$_POST['toDate']."') OR (visits.tarehe_ya_hudhurio_lijalo >= '".$_POST['toDate']."')GROUP BY visits.uic  ORDER BY tarehe_ya_hudhurio DESC";
+	WHERE visits.aina_ya_hudhurio = 'anaendelea'  and (visits.tarehe_ya_hudhurio >= '".$_POST['fromDate']."' and visits.tarehe_ya_hudhurio <= '".$_POST['toDate']."') OR (visits.tarehe_ya_hudhurio_lijalo >= '".$_POST['fromDate']."' and visits.tarehe_ya_hudhurio_lijalo <= '".$_POST['toDate']."') OR (visits.tarehe_ya_hudhurio_lijalo >= '".$_POST['toDate']."')GROUP BY visits.uic  ORDER BY tarehe_ya_hudhurio DESC";
   $orderResult = mysqli_query($link, $orderQuery) or die("database error:". mysqli_error($link));
   $filterOrders = array();
   while( $order = mysqli_fetch_assoc($orderResult) ) {
 	$filterOrders[] = $order;
   }
   if(count($filterOrders)) {
-	  $fileName = "PrEP Curr".date('Ymd') . ".csv";
+	  $fileName = "PrEP CT".date('Ymd') . ".csv";
 	  header("Content-Description: File Transfer");
 	  header("Content-Disposition: attachment; filename=$fileName");
 	  header("Content-Type: application/csv;");
@@ -204,7 +204,7 @@ $vidonge = $row['namba_ya_vidonge_alivyopewa'];
 
     $orderQuery = "
     SELECT visits.uic, clients.kvp_group, visits.tarehe_ya_hudhurio_lijalo, clients.gender, visits.created_at, visits.namba_ya_vidonge_alivyopewa, clients.dob, visits.tarehe_ya_hudhurio, MAX(tarehe_ya_hudhurio) as last_visit, MAX(tarehe_ya_hudhurio_lijalo) as next_visit, visits.mahali, visits.jina_la_mtoa_huduma FROM visits join clients on clients.uic = visits.uic
-    WHERE visits.hali_ya_PrEP_mahudhurio = 'mpya'  and (visits.tarehe_ya_hudhurio >= '".$_POST['fromDate']."' and visits.tarehe_ya_hudhurio <= '".$_POST['toDate']."') OR (visits.tarehe_ya_hudhurio_lijalo >= '".$_POST['fromDate']."' and visits.tarehe_ya_hudhurio_lijalo <= '".$_POST['toDate']."') GROUP BY visits.uic  ORDER BY tarehe_ya_hudhurio DESC";
+    WHERE visits.aina_ya_hudhurio = 'anaendelea'  and (visits.tarehe_ya_hudhurio >= '".$_POST['fromDate']."' and visits.tarehe_ya_hudhurio <= '".$_POST['toDate']."') OR (visits.tarehe_ya_hudhurio_lijalo >= '".$_POST['fromDate']."' and visits.tarehe_ya_hudhurio_lijalo <= '".$_POST['toDate']."') GROUP BY visits.uic  ORDER BY tarehe_ya_hudhurio DESC";
     $orderResult = mysqli_query($link, $orderQuery) or die("database error:". mysqli_error($link));
     $filterOrders = array();
     while( $order = mysqli_fetch_assoc($orderResult) ) {
