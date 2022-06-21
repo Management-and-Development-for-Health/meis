@@ -77,7 +77,7 @@ include('../export.php');
                                                                 <select name="data_group" id="" class="form-control">
                                                                 <option value="clients">Clients List</option>
                                                                 <option value="prep_new">PreP New</option>
-                                                                <option value="prep_curr">PreP Curr</option>
+                                                                <option value="prep_curr">PreP CT</option>
                                                                 </select>
                                                                        <span class="messages"></span>
                                                                 </div>

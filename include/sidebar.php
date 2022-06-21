@@ -176,13 +176,13 @@
                             <span class="pcoded-mcaret"></span>
                           </a>
                                         </li>
-                                        <li class=" ">
+                                        <!-- <li class=" ">
                                             <a href="../offline-backup/" class="waves-effect waves-dark">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext">Online Backup</span>
                             <span class="pcoded-mcaret"></span>
                           </a>
-                                        </li>
+                                        </li> -->
 
                                         
                         
@@ -193,7 +193,7 @@
                                 </li>
                                 
                                 <li class="pcoded-hasmenu">
-                                <p style="margin-top: 10%; padding-left:30%; margin-bottom:auto;">v.1.1.1</p>
+                                <p style="margin-top: 10%; padding-left:30%; margin-bottom:auto;">v.1.1.2</p>
                                 </li>
                                                               </ul>
 
