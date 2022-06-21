@@ -525,3 +525,17 @@ CREATE TABLE `visits` (
   `created_at` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `providers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `firstname` varchar(100) DEFAULT NULL,
+  `middlename` varchar(100) DEFAULT NULL,
+  `lastname` varchar(100) DEFAULT NULL,
+ `phone` varchar(100) DEFAULT NULL,
+  `gender` int(11) DEFAULT NULL,
+  `dob` varchar(100) NOT NULL,
+  `age` int(20) NOT NULL,
+  `user_id` varchar(100) NOT NULL,
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
