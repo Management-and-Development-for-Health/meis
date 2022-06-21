@@ -58,64 +58,101 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                                 <!-- HTML5 Export Buttons table start -->
                                                 <div class="card">
                                                     <div class="card-header table-card-header">
-                                                        <h5>Registered Clients</h5>
+                                                        <h5>Edit Provider</h5>
                                                     </div>
                                                     <div class="card-block">
-                                                        <div class="dt-responsive table-responsive">
-                                                            <table id="basic-btn" class="table table-striped table-bordered nowrap">
-                                                                <thead>
-                                                                
-                                                                    <tr>
-                                                                        <th>File Number</th>
-                                                                        <th>Fullname</th>
-                                                                        <th>UIC</th>
-                                                                        <th>Age</th>
-                                                                        <th>Registration Date</th>
-                                                                        <th>KVP Group</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                <?php
-                                                                require_once('../config.php');
-                                                                $query=mysqli_query($link,"select * from clients");
-$cnt=1;
-while($row=mysqli_fetch_array($query))
+
+                                                    <form  action="update_provider.php" method="POST" id="example-advanced-form">
+                                                    <?php
+   include('../config.php');
+$query1=mysqli_query($link,"select * from providers where id='".$_GET['cid']."'");
+while($row1=mysqli_fetch_array($query1)) 
 {
-?>        
-                                                                    <tr>
-                                                                        <td><?php echo htmlentities($row['file_no']);?></td>
-                                                                        <td><?php echo htmlentities($row['firstname']);?> <?php echo htmlentities($row['lastname']);?></td>
-                                                                        <td><?php echo htmlentities($row['uic']);?></td>
-                                                                        <td><?php 
-                                                                        $dob = $row['dob'];
-                                                                        $diff = (date('Y') - date('Y',strtotime($dob)));
-                                                                        echo $diff;
-                                                                        ?></td>
-                                                                        <td><?php 
-                                                                        $date = $row['created_at'];
-                                                                        echo date("Y-m-d",strtotime("$date"))?></td>
-                                                                        <td><?php echo htmlentities($row['kvp_group']);?></td>
-                                                                        <td>
-                    <a href="../client-details/?cid=<?php echo htmlentities($row['id']);?>">
-                    <button class="btn waves-effect waves-light btn-info btn-icon"><i class="fa fa-eye"></i></button></a>
-                    </td>
-                                                                    </tr>
-                                                                    <?php }?>
-                                                                </tbody>
-                                                                <tfoot>
-                                                                <tr>
-                                                                        <th>File Number</th>
-                                                                        <th>Fullname</th>
-                                                                        <th>UIC</th>
-                                                                        <th>Age</th>
-                                                                        <th>Start date</th>
-                                                                        <th>KVP Group</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                </tfoot>
-                                                            </table>
+?>
+                                                        <div class="row">
+                                                        <input type="hidden" value="<?php echo htmlentities($row1['id']);?>" name="id">
+                                                            <div class="col-sm-12 col-xl-4 m-b-30">
+                                                            <h4 class="sub-title">Firstname</h4>
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="firstname"  placeholder="Enter Firstname" value="<?php echo htmlentities($row1['firstname']);?>" required = "required">
+                                                                    <span class="help-block" style="color: red;"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 m-b-30">
+                                                            <h4 class="sub-title">Middle Name</h4>
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="middlename" placeholder="Enter Middlename" value="<?php echo htmlentities($row1['middlename']);?>">
+                                                                    <span class="messages"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 m-b-30">
+                                                            <h4 class="sub-title">Last name</h4>
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="lastname"  placeholder="Enter Lastname" value="<?php echo htmlentities($row1['lastname']);?>" required = "required">
+                                                                    <span class="messages"></span>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                            <div class="row">
+
+<div class="col-sm-12 col-xl-4 m-b-30">
+<h4 class="sub-title">Gender</h4>
+<div class="form-radio">
+                                                                        <div class="radio radiofill radio-primary radio-inline">
+                                                                            <label>
+                                                                                <input type="radio" name="gender" value="1" data-bv-field="member">
+                                                                                <i class="helper"></i>Male
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="radio radiofill radio-primary radio-inline">
+                                                                            <label>
+                                                                                <input type="radio" name="gender" value="2" data-bv-field="member">
+                                                                                <i class="helper"></i>Female
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="messages"></span>
+</div>
+<div class="col-sm-12 col-xl-4 m-b-30">
+ <h4 class="sub-title">Phone</h4>
+ <input type="text" class="form-control" name="phone" value="<?php echo htmlentities($row1['phone']);?>" placeholder="Enter Phone" required = "required">
+                                                              
+                
+</div>
+<div class="col-sm-12 col-xl-4 m-b-30">
+<h4 class="sub-title">Date of Birth</h4>
+    <div class="col-sm-12">
+        <input type="date" class="form-control" name="dob" value="<?php echo htmlentities($row1['dob']);?>"  placeholder="Enter Date of Birth" required = "required">
+        <span class="messages"></span>
+    </div>
+</div>
+</div>
+<div class="row">
+
+<!-- <div class="col-sm-12 col-xl-4 m-b-30">
+<h4 class="sub-title">File number <span style="color: gainsboro;">(optional)</span></h4>
+    <div class="col-sm-12">
+        <input type="text" class="form-control" name="file_no"  placeholder="Enter File number">
+        <span class="messages"></span>
+    </div>
+</div> -->
+<!-- <div class="col-sm-12 col-xl-4 m-b-30">
+<h4 class="sub-title">UIC</h4>
+    <div class="col-sm-12">
+        <input type="text" class="form-control" pattern="[A-Z]{2}[-][A-Z]{2}[-][A-Z]{3}[-][0-2]{1}[-][0-9]{2}[-][0-9]{2}" name="uic"  placeholder="Enter UIC (FA-BA-MWN-1-09-99)" required = "required">
+        <span class="messages"></span>
+    </div>
+</div> -->
+<input type="text" value="<?php echo $_SESSION['id']; ?>" hidden name="user_id">   
+<button type="submit" class="btn btn-success waves-effect" data-type="success" data-from="top" data-align="right" onClick="return confirm('Do you really want to submit ?')">Update</button>
+                                                                   
+</div>
+</div>
+                                                          
+                                              <?php }?>           
                                                         </div>
+                                                        </form>
+
                                                     </div>
                                                 </div>
                                                 <!-- HTML5 Export Buttons end -->

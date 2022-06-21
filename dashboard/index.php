@@ -193,7 +193,7 @@ else{
                                                     <div class="card-block">
                                                         <div class="row align-items-center">
                                                             <div class="col-8">
-                                                                <h4 class="text-c-red">145</h4>
+                                                            <?php include('total_providers.php');?>
                                                                 <h6 class="text-muted m-b-0"> Providers</h6>
                                                             </div>
                                                             <div class="col-4 text-right">

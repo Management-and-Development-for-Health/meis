@@ -75,7 +75,7 @@ if(isset($_POST["export"])){
     # code...  select clients.dob, visits.id, visits.uic, MIN(visits.tarehe_ya_hudhurio) AS created, SUM(visits.namba_ya_vidonge_alivyopewa) AS pills, MAX(visits.tarehe_ya_hudhurio_lijalo) as next_visit, clients.kvp_group  from visits join clients on clients.uic = visits.uic  where visits.aina_ya_hudhurio in ('mpya','anaendelea')  GROUP BY  visits.uic"
     $orderQuery = "
 	SELECT visits.uic, clients.kvp_group, visits.tarehe_ya_hudhurio_lijalo, clients.gender, visits.created_at, visits.namba_ya_vidonge_alivyopewa, clients.dob, visits.tarehe_ya_hudhurio, visits.mahali, visits.jina_la_mtoa_huduma FROM visits join clients on clients.uic = visits.uic
-	WHERE visits.hali_ya_PrEP_mahudhurio = 'mpya' and visits.aina_ya_hudhurio = 'mpya' and  visits.tarehe_ya_hudhurio >= '".$_POST["fromDate"]."' AND visits.tarehe_ya_hudhurio <= '".$_POST["toDate"]."' ORDER BY tarehe_ya_hudhurio DESC";
+	WHERE  visits.aina_ya_hudhurio = 'mpya' and  visits.tarehe_ya_hudhurio >= '".$_POST["fromDate"]."' AND visits.tarehe_ya_hudhurio <= '".$_POST["toDate"]."' ORDER BY tarehe_ya_hudhurio DESC";
   $orderResult = mysqli_query($link, $orderQuery) or die("database error:". mysqli_error($link));
   $filterOrders = array();
   while( $order = mysqli_fetch_assoc($orderResult) ) {

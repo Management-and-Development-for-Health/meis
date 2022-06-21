@@ -481,7 +481,18 @@ while($row=mysqli_fetch_array($query))
 </div>
 <div class="col-sm-12 col-xl-3 m-b-30">
 <h4 class="sub-title">Jina la Mtoa Huduma</h4>
-<input type="text" class="form-control" name="jina_la_mtoa_huduma" required="required" >
+<!-- <input type="text" class="form-control" name="jina_la_mtoa_huduma" required="required" > -->
+
+<select name="jina_la_mtoa_huduma" required="required" class="form-control">
+<?php 
+include('../config.php');
+$query=mysqli_query($link,"select * from providers");
+// $row=mysqli_fetch_array($query);
+while ($row=mysqli_fetch_array($query)) {?>
+ 
+<option value="<?php echo $row['firstname']?> <?php echo $row['lastname']?>"><?php echo $row['firstname']?> <?php echo $row['lastname']?></option>
+ <?php } ?>
+</select>
 </div>
 
 

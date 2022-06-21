@@ -137,7 +137,7 @@ while($row=mysqli_fetch_array($query))
 <div class="col-sm-12 col-xl-4 m-b-30">
 <h4 class="sub-title">Date of Birth</h4>
     <div class="col-sm-12">
-        <input type="date" class="form-control" name="dob"  placeholder="Enter Date of Birth" required = "required">
+        <input type="date" class="form-control" name="dob" max="2009-12-31"  placeholder="Enter Date of Birth" required = "required">
         <span class="messages"></span>
     </div>
 </div>

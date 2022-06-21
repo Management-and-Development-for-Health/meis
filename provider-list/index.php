@@ -92,7 +92,7 @@ while($row=mysqli_fetch_array($query))
                                                                         $date = $row['created_at'];
                                                                         echo date("Y-m-d",strtotime("$date"))?></td>
                                                                         <td>
-                    <a href="../client-details/?cid=<?php echo htmlentities($row['id']);?>">
+                    <a href="../provider-list/edit.php?cid=<?php echo htmlentities($row['id']);?>">
                     Edit</a>
                     </td>
                                                                     </tr>
