@@ -529,6 +529,21 @@ CREATE TABLE `visits` (
 
 -- Updated Scripts 
 
+
+ALTER TABLE `users` ADD COLUMN firstname varchar(100)  NULL;
+ALTER TABLE `users` ADD COLUMN middlename varchar(100)  NULL;
+ALTER TABLE `users` ADD COLUMN lastname varchar(100)  NULL;
+ALTER TABLE `users` ADD COLUMN phone varchar(100)  NULL;
+
+ALTER TABLE `users` ADD COLUMN email varchar(100)  NULL;
+
+
+ALTER TABLE `users` ADD COLUMN gender varchar(100)  NULL;
+
+
+ALTER TABLE `users` ADD COLUMN facility varchar(100)  NULL;
+
+
 CREATE TABLE `providers` (
   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `firstname` varchar(100) DEFAULT NULL,

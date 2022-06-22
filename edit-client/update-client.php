@@ -13,10 +13,9 @@
     $file_no = $_POST['file_no'] ;
     $uic = $_POST['uic'] ;
     $facility = $_POST['facility'] ;
-    // $created_date = date("Y-m-d H:i:s"); 
-
     $query = "UPDATE clients SET firstname = '$firstname', middlename = '$middlename', lastname = '$lastname', dob = '$dob', gender = '$gender', city_name = '$city_name', file_no = '$file_no', uic = '$uic', facility = '$facility' WHERE id = '$id'";
-if($link->query($query)===TRUE){
+   
+    if($link->query($query)===TRUE){
     echo "thank you"; 
 	header("location: ../client-list/");
     
