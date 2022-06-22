@@ -525,6 +525,10 @@ CREATE TABLE `visits` (
   `created_at` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+
+-- Updated Scripts 
+
 CREATE TABLE `providers` (
   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `firstname` varchar(100) DEFAULT NULL,
