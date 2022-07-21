@@ -100,6 +100,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                             </div>
                                                             <div class="row">
 
+                                                            <div class="col-sm-12 col-xl-4 m-b-30">
+                                                            <h4 class="sub-title">Gender</h4>
+                                                                <div class="col-sm-12">
+                                                                  <select class="form-control">
+                                                                    <option>Male</option>
+                                                                    <option>Female</option>
+                                                                  </select>
+                                                                    <span class="messages"></span>
+                                                                </div>
+                                                            </div>
+
 <div class="col-sm-12 col-xl-4 m-b-30">
 <h4 class="sub-title">Gender</h4>
 <div class="form-radio">

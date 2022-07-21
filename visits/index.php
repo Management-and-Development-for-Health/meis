@@ -112,7 +112,7 @@ while($row=mysqli_fetch_array($query))
  
  if ($_GET['cid']!="") {?>
     
-<input list="names" class="form-control" name="uic" value="<?php  echo $uic; ?>" >
+<input list="names" class="form-control" name="uic" id="uic" value="<?php  echo $uic; ?>" >
  <?php }}
  ?>
                 
@@ -499,7 +499,7 @@ while ($row=mysqli_fetch_array($query)) {?>
 </div>
 
 <div>
-<button type="submit" class="btn btn-primary m-b-0" name="submit">Submit</button>
+<button type="submit" class="btn btn-primary m-b-0" name="submit" id="final_submit">Submit</button>
 </div>
                                                                             </fieldset>
                                                                         </form>
@@ -671,7 +671,25 @@ function hudhurio() {
     
 }
 
-
+$('#final_submit').on('click', function(){
+            var uic =  $('#uic').val();
+            
+            $.ajax({
+      	url: 'checkuic.php',
+      	type: 'post',
+      	data: {
+            'check_uic':1,
+      		'uic' : uic,
+      	},
+      	success: function(response){
+            if (response == 'client') {
+                alert('uic doesnt exist');
+            }
+      		
+    
+      	}
+      });
+});
 </script>
 <!-- Required Jquery -->
 <script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>

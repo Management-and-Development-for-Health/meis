@@ -558,3 +558,13 @@ CREATE TABLE `providers` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+
+--  updated scripts on 30th June 2022 (new scripts)
+
+
+ALTER TABLE `visits` ADD COLUMN client_id varchar(100)  NULL;
+
+
+ALTER TABLE `visits` ADD COLUMN facility_id varchar(100)  NULL;
+
