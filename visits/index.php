@@ -536,6 +536,7 @@ function amepima() {
 
       }else if (mselectvalue == "hasi") {
         $('select[name="ameandikishwa_ctc"]:first').val('hausiki') ;
+        document.getElementById("ameandikishwa_ctc").disabled = true;
         mdivtwo.style.display = "none";
       mdivone.style.display = "block";
       }

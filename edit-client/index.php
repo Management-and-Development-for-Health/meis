@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                       <!-- client form starts -->
                                                       <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Register New Client</h5>
+                                                        <h5>Edit Client</h5>
                                                         <span>Please fill all required fields</span>
                                                        
                                                         <div class="card-block">
@@ -104,25 +104,20 @@ while($row1=mysqli_fetch_array($query1))
                                                                 </div>
                                                             </div>
                                                             </div>
+                                                      
                                                             <div class="row">
-
-<div class="col-sm-12 col-xl-4 m-b-30">
-<h4 class="sub-title">Gender</h4>
-<div class="form-radio">
-                                                                        <div class="radio radiofill radio-primary radio-inline">
-                                                                            <label>
-                                                                                <input type="radio" name="gender" value="1" data-bv-field="member">
-                                                                                <i class="helper"></i>Male
-                                                                            </label>
-                                                                        </div>
-                                                                        <div class="radio radiofill radio-primary radio-inline">
-                                                                            <label>
-                                                                                <input type="radio" name="gender" value="2" data-bv-field="member">
-                                                                                <i class="helper"></i>Female
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <span class="messages"></span>
+                                                            <div class="col-sm-12 col-xl-3 m-b-30">
+ <h4 class="sub-title">KVP Group</h4>
+ <input list="kvp" class="form-control" name="kvp" value="<?php echo htmlentities($row1['kvp_group']);?>">
+<datalist id="kvp">
+  <option value="FSW">
+  <option value="PWID">
+  <option value="MSM">
+  <option value="AGYW">
+  <option value="Risk Men">
+  <option value="Discordant Couple">
+</datalist>
+                
 </div>
 <div class="col-sm-12 col-xl-4 m-b-30">
  <h4 class="sub-title">Residence</h4>
@@ -160,7 +155,7 @@ while($row=mysqli_fetch_array($query))
 <div class="col-sm-12 col-xl-4 m-b-30">
 <h4 class="sub-title">UIC</h4>
     <div class="col-sm-12">
-        <input type="text" class="form-control" value="<?php echo htmlentities($row1['uic']);?>" pattern="[A-Z]{2}[-][A-Z]{2}[-][A-Z]{3}[-][0-2]{1}[-][0-9]{2}[-][0-9]{2}" name="uic"  placeholder="Enter UIC (FA-BA-MWN-1-09-99)" required = "required">
+        <input type="text" class="form-control" disabled value="<?php echo htmlentities($row1['uic']);?>" pattern="[A-Z]{2}[-][A-Z]{2}[-][A-Z]{3}[-][0-2]{1}[-][0-9]{2}[-][0-9]{2}" name="uic"  placeholder="Enter UIC (FA-BA-MWN-1-09-99)" required = "required">
         <span class="messages"></span>
     </div>
 </div>
@@ -180,20 +175,43 @@ while($row=mysqli_fetch_array($query))
 </datalist>
                 
 </div>
-<div class="col-sm-12 col-xl-3 m-b-30">
- <h4 class="sub-title">KVP Group</h4>
- <input list="kvp" class="form-control" name="kvp" value="<?php echo htmlentities($row1['kvp_group']);?>">
-<datalist id="kvp">
-  <option value="FSW">
-  <option value="PWID">
-  <option value="MSM">
-  <option value="AGYW">
-  <option value="Risk Men">
-  <option value="Discordant Couple">
-</datalist>
-                
+
 </div>
-</div>
+<div class="row">
+                                                            <div class="col-sm-12 col-xl-4 m-b-30">
+                                                            <h4 class="sub-title">Gender</h4>
+                                                                <div class="col-sm-12">
+                                                                  <select class="form-control" name="gender" id="gender_select" onchange="isPregnant();">
+                                                                  <option value="<?php echo htmlentities($row1['gender']);?>"><?php if($row1['gender'] == 1){echo "Male";} else{echo "female";};?></option>
+                                                                    <option  value="1">Male</option>
+                                                                    <option value="2">Female</option>
+                                                                  </select>
+                                                                    <span class="messages"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 m-b-30" id="is_pregnant_div" >
+                                                            <h4 class="sub-title">Is Pregnant?</h4>
+                                                                <div class="col-sm-12">
+                                                                  <select class="form-control" name="is_pregnant"  onchange="isBreastFeeding();" id="is_pregnant_select">
+                                                                    <option value="<?php echo htmlentities($row1['is_pregnant']);?>"><?php echo htmlentities($row1['is_pregnant']);?></option>
+                                                                    <option  value="yes">Yes</option>
+                                                                    <option value="no">No</option>
+                                                                  </select>
+                                                                    <span class="messages"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-4 m-b-30" id="is_breastfeeding_div">
+                                                            <h4 class="sub-title">Breast Feeding?</h4>
+                                                                <div class="col-sm-12">
+                                                                  <select class="form-control" name="breast_feeding" >
+                                                                    <option value="<?php echo htmlentities($row1['breast_feeding']);?>"><?php echo htmlentities($row1['breast_feeding']);?></option>
+                                                                    <option  value="yes">Yes</option>
+                                                                    <option value="no">No</option>
+                                                                  </select>
+                                                                    <span class="messages"></span>
+                                                                </div>
+                                                            </div>
+                                                            </div>
 </div>
                                                           
                                                             <div class="row">
@@ -219,7 +237,39 @@ while($row=mysqli_fetch_array($query))
 </div>
 
 </div>
+<script>
+    function isPregnant() {
+    var mselect  =  document.getElementById("gender_select");
+    var mselectvalue = mselect.options[mselect.selectedIndex].value;
+    var mdivone =  document.getElementById("is_pregnant_div");
 
+      if (mselectvalue == "2") {
+       mdivone.style.display = "block";
+
+      }
+     
+      else {
+      mdivone.style.display = "none";
+      
+      }  
+}
+
+function isBreastFeeding() {
+    var mselect  =  document.getElementById("is_pregnant_select");
+    var mselectvalue = mselect.options[mselect.selectedIndex].value;
+    var mdivone =  document.getElementById("is_breastfeeding_div");
+
+      if (mselectvalue == "no") {
+       mdivone.style.display = "block";
+
+      }
+     
+      else {
+      mdivone.style.display = "none";
+      
+      }  
+}
+</script>
 <!-- Required Jquery -->
 <script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
 <script type="text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
