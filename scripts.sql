@@ -560,11 +560,18 @@ CREATE TABLE `providers` (
 
 
 
---  updated scripts on 30th June 2022 (new scripts)
+--  updated scripts on 30th June 2022
 
 
 ALTER TABLE `visits` ADD COLUMN client_id varchar(100)  NULL;
 
 
 ALTER TABLE `visits` ADD COLUMN facility_id varchar(100)  NULL;
+
+
+-- updated scrpts on 22th July 2022 (new scripts)
+
+ALTER TABLE `clients` ADD COLUMN is_pregnant varchar(100)  NULL;
+
+ALTER TABLE `clients` ADD COLUMN breast_feeding varchar(100)  NULL;
 

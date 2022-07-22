@@ -100,18 +100,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                             </div>
                                                             <div class="row">
 
-                                                            <div class="col-sm-12 col-xl-4 m-b-30">
+                                                            <div class="col-sm-12 col-xl-3 m-b-30">
                                                             <h4 class="sub-title">Gender</h4>
                                                                 <div class="col-sm-12">
-                                                                  <select class="form-control">
-                                                                    <option>Male</option>
-                                                                    <option>Female</option>
+                                                                  <select class="form-control" name="gender" id="gender_select" onchange="isPregnant();">
+                                                                    <option  value="1">Male</option>
+                                                                    <option value="2">Female</option>
+                                                                  </select>
+                                                                    <span class="messages"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-3 m-b-30" id="is_pregnant_div" style="display:none ;" >
+                                                            <h4 class="sub-title">Is Pregnant?</h4>
+                                                                <div class="col-sm-12">
+                                                                  <select class="form-control" name="is_pregnant"  onchange="isBreastFeeding();" id="is_pregnant_select">
+                                                                    <option value="">Select</option>
+                                                                    <option  value="yes">Yes</option>
+                                                                    <option value="no">No</option>
+                                                                  </select>
+                                                                    <span class="messages"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12 col-xl-3 m-b-30" id="is_breastfeeding_div" style="display:none ;" >
+                                                            <h4 class="sub-title">Breast Feeding?</h4>
+                                                                <div class="col-sm-12">
+                                                                  <select class="form-control" name="breast_feeding" >
+                                                                    <option value="">Select</option>
+                                                                    <option  value="yes">Yes</option>
+                                                                    <option value="no">No</option>
                                                                   </select>
                                                                     <span class="messages"></span>
                                                                 </div>
                                                             </div>
 
-<div class="col-sm-12 col-xl-4 m-b-30">
+<!-- <div class="col-sm-12 col-xl-4 m-b-30">
 <h4 class="sub-title">Gender</h4>
 <div class="form-radio">
                                                                         <div class="radio radiofill radio-primary radio-inline">
@@ -128,8 +150,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                                         </div>
                                                                     </div>
                                                                     <span class="messages"></span>
-</div>
-<div class="col-sm-12 col-xl-4 m-b-30">
+</div> -->
+<div class="col-sm-12 col-xl-3 m-b-30">
  <h4 class="sub-title">Place of Birth</h4>
  <input list="region" class="form-control" name="city_name">
 <datalist id="region" name = "city_name">
@@ -145,7 +167,7 @@ while($row=mysqli_fetch_array($query))
 </datalist>
                 
 </div>
-<div class="col-sm-12 col-xl-4 m-b-30">
+<div class="col-sm-12 col-xl-3 m-b-30">
 <h4 class="sub-title">Date of Birth</h4>
     <div class="col-sm-12">
         <input type="date" class="form-control" name="dob" max="2009-12-31"  placeholder="Enter Date of Birth" required = "required">
@@ -210,6 +232,40 @@ while($row=mysqli_fetch_array($query))
 
 </div>
 
+
+<script>
+    function isPregnant() {
+    var mselect  =  document.getElementById("gender_select");
+    var mselectvalue = mselect.options[mselect.selectedIndex].value;
+    var mdivone =  document.getElementById("is_pregnant_div");
+
+      if (mselectvalue == "2") {
+       mdivone.style.display = "block";
+
+      }
+     
+      else {
+      mdivone.style.display = "none";
+      
+      }  
+}
+
+function isBreastFeeding() {
+    var mselect  =  document.getElementById("is_pregnant_select");
+    var mselectvalue = mselect.options[mselect.selectedIndex].value;
+    var mdivone =  document.getElementById("is_breastfeeding_div");
+
+      if (mselectvalue == "no") {
+       mdivone.style.display = "block";
+
+      }
+     
+      else {
+      mdivone.style.display = "none";
+      
+      }  
+}
+</script>
 <!-- Required Jquery -->
 <script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
 <script type="text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>

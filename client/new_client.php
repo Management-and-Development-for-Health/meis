@@ -8,6 +8,9 @@
     $dob = $_POST['dob'] ;
     $gender = $_POST['gender'] ;
 
+    $breast_feeding = $_POST['breast_feeding'] ;
+    $is_pregnant = $_POST['is_pregnant'] ;
+
 	$city_name = $_POST['city_name'] ;
     // $file_no = $_POST['file_no'] ;
     // $uic = $_POST['uic'] ;
@@ -66,8 +69,8 @@
 
     $query1 = "INSERT INTO audit(user, activity) VALUES('$user_id', '$activity')";
     $query = "
-    INSERT INTO clients(firstname,   middlename, lastname, dob, gender, city_name, file_no, uic, facility)  
-     VALUES('$firstname',  '$middlename', '$lastname', '$dob', '$gender',  '$city_name', '$serialNo', '$auto_uic', '$facility') ";
+    INSERT INTO clients(firstname,   middlename, lastname, is_pregnant, breast_feeding, dob, gender, city_name, file_no, uic, facility)  
+     VALUES('$firstname',  '$middlename', '$lastname',  '$is_pregnant', '$breast_feeding','$dob', '$gender',  '$city_name', '$serialNo', '$auto_uic', '$facility') ";
 if($link->query($query)===TRUE){
     if ($link->query($query1)===TRUE) {
         # code...
