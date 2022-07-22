@@ -76,6 +76,7 @@ $query1=mysqli_query($link,"select * from clients join facilities on facilities.
 while($row1=mysqli_fetch_array($query1)) 
 {
 
+    $uic =$row1['uic'];
 
                                         ?>
                                         <div class="col-sm-12">
@@ -165,7 +166,7 @@ while($row1=mysqli_fetch_array($query1))
                                                                 
                                                             <a href="../edit-client/?cid=<?php echo htmlentities($id);?>"><button class="btn btn-out-dashed waves-effect waves-light btn-info btn-square">Edit</button></a>
             
-            <a href="../visits/"><button class="btn btn-out-dashed waves-effect waves-light btn-success btn-square">Add Visit</button></a>
+            <a href="../visits/?cid=<?php echo htmlentities($uic);?>"><button class="btn btn-out-dashed waves-effect waves-light btn-success btn-square">Add Visit</button></a>
                                                                </div>
                                                         </div>
                                                     </div>
