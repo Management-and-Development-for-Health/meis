@@ -3,7 +3,7 @@
 require_once('../config.php');
 $output = "";
 
-    $uic = $_POST['uic'];
+    $uic = trim($_POST['uic']);
     $mahali = $_POST ['mahali'];
     $tarehe_ya_hudhurio = $_POST['tarehe_ya_hudhurio'];
     $aina_ya_hudhurio = $_POST ['aina_ya_hudhurio'];
@@ -32,11 +32,18 @@ $output = "";
     $jina_la_mtoa_huduma = $_POST ['jina_la_mtoa_huduma'];
 
 
-    $get_id=mysqli_query($link, "SELECT id FROM clients WHERE uic = '.$uic.'");
-    echo $get_id;
+    $get_id = "SELECT * from clients WHERE uic like '%{$uic}%'";
+    $result = mysqli_query($link, $get_id);
+    if(mysqli_num_rows($result) > 0 ){
+
+        $row = mysqli_fetch_assoc($result);
+        $client_id = $row["id"]; 
+       
+        
+    }
     $query = " 
-    INSERT INTO visits(uic, mahali, tarehe_ya_hudhurio, aina_ya_hudhurio, amepima_na_kupewa_majibu, ameandikishwa_ctc, hali_ya_PrEP_mahudhurio, kisukari, shinikizo_la_damu, ugonjwa_wa_figo, ugonjwa_wa_ini, dawa_za_kuathiri_figo, CrCl, umri_15_35kg, dalili_za_maambukizi_ya_VVU, anastahili_kutumia_PrEP, aina_ya_dawa_PrEP_aliyopewa, namba_ya_vidonge_alivyopewa, sababu_za_kumwachisha_PrEP, matumizi_ya_PrEP, sababu_za_ufuasi_hafifu, kuchunguzwa_magonjwa_ya_ngono, ametibiwa_magonjwa_ya_ngono, madhara_ya_PrEP, huduma_nyingine_alizopewa, tarehe_ya_hudhurio_lijalo, jina_la_mtoa_huduma ) 
-    VALUES ('$uic','$mahali', '$tarehe_ya_hudhurio', '$aina_ya_hudhurio', '$amepima_na_kupewa_majibu', '$ameandikishwa_ctc', '$hali_ya_PrEP_mahudhurio', '$kisukari','$shinikizo_la_damu', '$ugonjwa_wa_figo', '$ugonjwa_wa_ini', '$dawa_za_kuathiri_figo', '$CrCl', '$umri_15_35kg', '$dalili_za_maambukizi_ya_VVU', '$anastahili_kutumia_PrEP', '$aina_ya_dawa_PrEP_aliyopewa', '$namba_ya_vidonge_alivyopewa', '$sababu_za_kumwachisha_PrEP', '$matumizi_ya_PrEP', '$sababu_za_ufuasi_hafifu', '$kuchunguzwa_magonjwa_ya_ngono', '$ametibiwa_magonjwa_ya_ngono', '$madhara_ya_PrEP', '$huduma_nyingine_alizopewa', '$tarehe_ya_hudhurio_lijalo', '$jina_la_mtoa_huduma') ";
+    INSERT INTO visits(uic, client_id, mahali, tarehe_ya_hudhurio, aina_ya_hudhurio, amepima_na_kupewa_majibu, ameandikishwa_ctc, hali_ya_PrEP_mahudhurio, kisukari, shinikizo_la_damu, ugonjwa_wa_figo, ugonjwa_wa_ini, dawa_za_kuathiri_figo, CrCl, umri_15_35kg, dalili_za_maambukizi_ya_VVU, anastahili_kutumia_PrEP, aina_ya_dawa_PrEP_aliyopewa, namba_ya_vidonge_alivyopewa, sababu_za_kumwachisha_PrEP, matumizi_ya_PrEP, sababu_za_ufuasi_hafifu, kuchunguzwa_magonjwa_ya_ngono, ametibiwa_magonjwa_ya_ngono, madhara_ya_PrEP, huduma_nyingine_alizopewa, tarehe_ya_hudhurio_lijalo, jina_la_mtoa_huduma ) 
+    VALUES ('$uic','$client_id','$mahali', '$tarehe_ya_hudhurio', '$aina_ya_hudhurio', '$amepima_na_kupewa_majibu', '$ameandikishwa_ctc', '$hali_ya_PrEP_mahudhurio', '$kisukari','$shinikizo_la_damu', '$ugonjwa_wa_figo', '$ugonjwa_wa_ini', '$dawa_za_kuathiri_figo', '$CrCl', '$umri_15_35kg', '$dalili_za_maambukizi_ya_VVU', '$anastahili_kutumia_PrEP', '$aina_ya_dawa_PrEP_aliyopewa', '$namba_ya_vidonge_alivyopewa', '$sababu_za_kumwachisha_PrEP', '$matumizi_ya_PrEP', '$sababu_za_ufuasi_hafifu', '$kuchunguzwa_magonjwa_ya_ngono', '$ametibiwa_magonjwa_ya_ngono', '$madhara_ya_PrEP', '$huduma_nyingine_alizopewa', '$tarehe_ya_hudhurio_lijalo', '$jina_la_mtoa_huduma') ";
 if($link->query($query)===TRUE){
     $msg = "Successfully Submited ";
 	header("location: ../visits/");

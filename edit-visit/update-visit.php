@@ -32,7 +32,16 @@ $output = "";
     $jina_la_mtoa_huduma = $_POST ['jina_la_mtoa_huduma'];
 $id = $_POST['id'];
     
-    $query = " UPDATE visits SET uic = '$uic', mahali = '$mahali', tarehe_ya_hudhurio = '$tarehe_ya_hudhurio',
+$get_id = "SELECT * from clients WHERE uic like '%{$uic}%'";
+$result = mysqli_query($link, $get_id);
+if(mysqli_num_rows($result) > 0 ){
+
+    $row = mysqli_fetch_assoc($result);
+    $client_id = $row["id"]; 
+   
+    
+}
+    $query = " UPDATE visits SET uic = '$uic', client_id = '$client_id', mahali = '$mahali', tarehe_ya_hudhurio = '$tarehe_ya_hudhurio',
      aina_ya_hudhurio = '$aina_ya_hudhurio', amepima_na_kupewa_majibu = '$amepima_na_kupewa_majibu',
      ameandikishwa_ctc = '$ameandikishwa_ctc', hali_ya_PrEP_mahudhurio = '$hali_ya_PrEP_mahudhurio',kisukari = '$kisukari',
      shinikizo_la_damu = '$shinikizo_la_damu',ugonjwa_wa_figo = '$ugonjwa_wa_figo', ugonjwa_wa_ini = '$ugonjwa_wa_ini',
