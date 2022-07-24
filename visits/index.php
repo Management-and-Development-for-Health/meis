@@ -140,6 +140,7 @@ while($row=mysqli_fetch_array($query))
                                                                     <option value="anaendelea">2. Anaendelea</option>
                                                                     <option value="amerudia kuanza upya">3. Amerudia kuanza upya</option>
                                                                     <option value="amehamia">4. Amehamia</option>
+                                                                    <option value="alitembelea_kituo_kingine">5. Alitembelea kituo kingine</option>
 
                                                                 </select>
                                                             </div>
@@ -268,7 +269,7 @@ while($row=mysqli_fetch_array($query))
                    </select>
                </div>
                                <div class="col-sm-12 col-xl-5 m-b-30">
-                                   <h4 class="sub-title">Dawa za kuathiri Figo</h4>
+                                   <h4 class="sub-title">Anatumia dawa za kuathiri Figo</h4>
                                    <select name="dawa_za_kuathiri_figo" class="form-control  form-control-default" required = "required" id="mselect2" onchange="athariFigo();">
                                    <option value="">Chagua</option>
                        <option value="ndio">1. Ndio (Acha Hastahili)</option>
@@ -278,15 +279,66 @@ while($row=mysqli_fetch_array($query))
 
                                    </select>
                                </div>
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Amefanyiwa kipimo cha HBV</h4>
+
+                                   <select name="amenfanyiwa_kipimo_cha_hbv" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="">Chagua</option>
+                                   <option value="ndio">1. Ndio</option>
+                       <option value="hapana">2. Hapana</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
+
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Majibu ya kipimo cha HBV</h4>
+
+                                   <select name="majibu_ya_kipimo_cha_hbv" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="">Chagua</option>
+                                   <option value="hasi">1. Hasi</option>
+                       <option value="chanya">2. Chanya</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Amefanyiwa kipimo cha HCV</h4>
+
+                                   <select name="amenfanyiwa_kipimo_cha_hcv" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="">Chagua</option>
+                                   <option value="ndio">1. Ndio</option>
+                       <option value="hapana">2. Hapana</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Majibu ya kipimo cha HCV</h4>
+
+                                   <select name="majibu_ya_kipimo_cha_hcv" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="">Chagua</option>
+                                   <option value="hasi">1. Hasi</option>
+                       <option value="chanya">2. Chanya</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Amefanyiwa kipimo cha CrCL</h4>
+
+                                   <select name="amenfanyiwa_kipimo_cha_crcl" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="">Chagua</option>
+                                   <option value="ndio">1. Ndio</option>
+                       <option value="hapana">2. Hapana</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
                                <div class="col-sm-12 col-xl-4 m-b-30" >
                                    <h4 class="sub-title">Serum Creatinine Results (CrCL) Umol/L</h4>
 
                                    <select name="CrCl" class="form-control form-control-default" required = "required" id="hide1">
                                    <option value="">Chagua</option>
-                                   <option value="> 60 umol/L">1. >60 umol/L</option>
-                       <option value="< 60 umol/L">2. < 60 umol/L </option>
+                                   <option value="> 60 umol/L">1. >60 umol/L apewe huduma</option>
+                       <option value="< 60 umol/L">2. < 60 umol/L asipewe huduma </option>
                        <option value="majibu hayapo au kipimo hakijafanyika na anaonekana yupo vizuri kiafya">3. Majibu Hayapo au kipimo hakijafanyika na anaonekana yupo vizuri kiafya</option>
-                       <option value="majibu hayapo au kipimo hakijafanyika na anaonekana hayupo vizuri kiafya">4. Majibu Hayapo au kipimo hakijafanyika na anaonekana hayupo vizuri kiafya</option>
+                       <option value="haihusiki">4. Haihusiki</option>
 
 
                                    </select>
@@ -348,7 +400,7 @@ while($row=mysqli_fetch_array($query))
 
 <div class="col-sm-12 col-xl-4 m-b-30">
 <h4 class="sub-title">Aina ya Dawa PrEP aliyopewa</h4>
-<input type="text" value="Truvada" name="aina_ya_dawa_PrEP_aliyopewa"  class="form-control" id="hide_dawa">
+<input type="text" value="TDF/FTC" name="aina_ya_dawa_PrEP_aliyopewa"  class="form-control" id="hide_dawa">
 </div>
 <div class="col-sm-12 col-xl-4 m-b-30">
 <h4 class="sub-title">Namba ya Vidonge Alivyopewa</h4>
@@ -470,10 +522,29 @@ while($row=mysqli_fetch_array($query))
 
 </select>
 </div>
+
+
+<div class="col-sm-12 col-xl-3 m-b-30">
+<h4 class="sub-title">Kondomu za kike</h4>
+<input type="text" class="form-control" name="kondomu_za_kike">
+</div>
+
+<div class="col-sm-12 col-xl-3 m-b-30">
+<h4 class="sub-title">Kondomu za kiume</h4>
+<input type="text" class="form-control" name="kondomu_za_kiume">
+</div>
+
+<div class="col-sm-12 col-xl-3 m-b-30">
+<h4 class="sub-title">Idadi ya vielelezo vya elimu ya afya alivyopewa</h4>
+<input type="text" class="form-control" name="idadi_ya_vielelezo_vya_elimu_afya_alivyopewa">
+</div>
+
 <div class="col-sm-12 col-xl-3 m-b-30">
 <h4 class="sub-title">Huduma Nyingine alizopata</h4>
 <input type="text" class="form-control" name="huduma_nyingine_alizopewa">
 </div>
+
+
 <div class="col-sm-12 col-xl-3 m-b-30">
 <h4 class="sub-title">Tarehe ya Hudhurio lijalo</h4>
 

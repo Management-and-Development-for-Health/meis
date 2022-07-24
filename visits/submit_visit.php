@@ -31,6 +31,14 @@ $output = "";
     $tarehe_ya_hudhurio_lijalo = $_POST['tarehe_ya_hudhurio_lijalo'];
     $jina_la_mtoa_huduma = $_POST ['jina_la_mtoa_huduma'];
 
+    $idadi_ya_vielelezo_vya_elimu_afya_alivyopewa = $_POST['idadi_ya_vielelezo_vya_elimu_afya_alivyopewa'];
+    $kondomu_za_kiume = $_POST ['kondomu_za_kiume'];
+    $kondomu_za_kike = $_POST['kondomu_za_kike'];
+    $amenfanyiwa_kipimo_cha_hbv = $_POST ['amenfanyiwa_kipimo_cha_hbv'];
+    $majibu_ya_kipimo_cha_hbv = $_POST ['majibu_ya_kipimo_cha_hbv'];
+    $amenfanyiwa_kipimo_cha_hcv = $_POST['amenfanyiwa_kipimo_cha_hcv'];
+    $majibu_ya_kipimo_cha_hcv = $_POST ['majibu_ya_kipimo_cha_hcv'];
+    $amenfanyiwa_kipimo_cha_crcl = $_POST['amenfanyiwa_kipimo_cha_crcl'];
 
     $get_id = "SELECT * from clients WHERE uic like '%{$uic}%'";
     $result = mysqli_query($link, $get_id);
@@ -42,8 +50,8 @@ $output = "";
         
     }
     $query = " 
-    INSERT INTO visits(uic, client_id, mahali, tarehe_ya_hudhurio, aina_ya_hudhurio, amepima_na_kupewa_majibu, ameandikishwa_ctc, hali_ya_PrEP_mahudhurio, kisukari, shinikizo_la_damu, ugonjwa_wa_figo, ugonjwa_wa_ini, dawa_za_kuathiri_figo, CrCl, umri_15_35kg, dalili_za_maambukizi_ya_VVU, anastahili_kutumia_PrEP, aina_ya_dawa_PrEP_aliyopewa, namba_ya_vidonge_alivyopewa, sababu_za_kumwachisha_PrEP, matumizi_ya_PrEP, sababu_za_ufuasi_hafifu, kuchunguzwa_magonjwa_ya_ngono, ametibiwa_magonjwa_ya_ngono, madhara_ya_PrEP, huduma_nyingine_alizopewa, tarehe_ya_hudhurio_lijalo, jina_la_mtoa_huduma ) 
-    VALUES ('$uic','$client_id','$mahali', '$tarehe_ya_hudhurio', '$aina_ya_hudhurio', '$amepima_na_kupewa_majibu', '$ameandikishwa_ctc', '$hali_ya_PrEP_mahudhurio', '$kisukari','$shinikizo_la_damu', '$ugonjwa_wa_figo', '$ugonjwa_wa_ini', '$dawa_za_kuathiri_figo', '$CrCl', '$umri_15_35kg', '$dalili_za_maambukizi_ya_VVU', '$anastahili_kutumia_PrEP', '$aina_ya_dawa_PrEP_aliyopewa', '$namba_ya_vidonge_alivyopewa', '$sababu_za_kumwachisha_PrEP', '$matumizi_ya_PrEP', '$sababu_za_ufuasi_hafifu', '$kuchunguzwa_magonjwa_ya_ngono', '$ametibiwa_magonjwa_ya_ngono', '$madhara_ya_PrEP', '$huduma_nyingine_alizopewa', '$tarehe_ya_hudhurio_lijalo', '$jina_la_mtoa_huduma') ";
+    INSERT INTO visits(idadi_ya_vielelezo_vya_elimu_afya_alivyopewa, kondomu_za_kiume, kondomu_za_kike, amenfanyiwa_kipimo_cha_hbv, majibu_ya_kipimo_cha_hbv, amenfanyiwa_kipimo_cha_hcv, majibu_ya_kipimo_cha_hcv, amenfanyiwa_kipimo_cha_crcl, uic, client_id, mahali, tarehe_ya_hudhurio, aina_ya_hudhurio, amepima_na_kupewa_majibu, ameandikishwa_ctc, hali_ya_PrEP_mahudhurio, kisukari, shinikizo_la_damu, ugonjwa_wa_figo, ugonjwa_wa_ini, dawa_za_kuathiri_figo, CrCl, umri_15_35kg, dalili_za_maambukizi_ya_VVU, anastahili_kutumia_PrEP, aina_ya_dawa_PrEP_aliyopewa, namba_ya_vidonge_alivyopewa, sababu_za_kumwachisha_PrEP, matumizi_ya_PrEP, sababu_za_ufuasi_hafifu, kuchunguzwa_magonjwa_ya_ngono, ametibiwa_magonjwa_ya_ngono, madhara_ya_PrEP, huduma_nyingine_alizopewa, tarehe_ya_hudhurio_lijalo, jina_la_mtoa_huduma ) 
+    VALUES ('$idadi_ya_vielelezo_vya_elimu_afya_alivyopewa','$kondomu_za_kiume','$kondomu_za_kike', '$amenfanyiwa_kipimo_cha_hbv', '$majibu_ya_kipimo_cha_hbv', '$amenfanyiwa_kipimo_cha_hcv', '$majibu_ya_kipimo_cha_hcv', '$amenfanyiwa_kipimo_cha_crcl',  '$uic','$client_id','$mahali', '$tarehe_ya_hudhurio', '$aina_ya_hudhurio', '$amepima_na_kupewa_majibu', '$ameandikishwa_ctc', '$hali_ya_PrEP_mahudhurio', '$kisukari','$shinikizo_la_damu', '$ugonjwa_wa_figo', '$ugonjwa_wa_ini', '$dawa_za_kuathiri_figo', '$CrCl', '$umri_15_35kg', '$dalili_za_maambukizi_ya_VVU', '$anastahili_kutumia_PrEP', '$aina_ya_dawa_PrEP_aliyopewa', '$namba_ya_vidonge_alivyopewa', '$sababu_za_kumwachisha_PrEP', '$matumizi_ya_PrEP', '$sababu_za_ufuasi_hafifu', '$kuchunguzwa_magonjwa_ya_ngono', '$ametibiwa_magonjwa_ya_ngono', '$madhara_ya_PrEP', '$huduma_nyingine_alizopewa', '$tarehe_ya_hudhurio_lijalo', '$jina_la_mtoa_huduma') ";
 if($link->query($query)===TRUE){
     $msg = "Successfully Submited ";
 	header("location: ../visits/");

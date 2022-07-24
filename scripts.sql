@@ -575,3 +575,13 @@ ALTER TABLE `clients` ADD COLUMN is_pregnant varchar(100)  NULL;
 
 ALTER TABLE `clients` ADD COLUMN breast_feeding varchar(100)  NULL;
 
+
+ALTER TABLE `visits` ADD COLUMN idadi_ya_vielelezo_vya_elimu_afya_alivyopewa varchar(100)  NULL;
+ALTER TABLE `visits` ADD COLUMN kondomu_za_kiume varchar(100)  NULL;
+ALTER TABLE `visits` ADD COLUMN kondomu_za_kike varchar(100)  NULL;
+ALTER TABLE `visits` ADD COLUMN amenfanyiwa_kipimo_cha_hbv varchar(100)  NULL;
+ALTER TABLE `visits` ADD COLUMN majibu_ya_kipimo_cha_hbv varchar(100)  NULL;
+ALTER TABLE `visits` ADD COLUMN amenfanyiwa_kipimo_cha_hcv varchar(100)  NULL;
+ALTER TABLE `visits` ADD COLUMN majibu_ya_kipimo_cha_hcv varchar(100)  NULL;
+ALTER TABLE `visits` ADD COLUMN amenfanyiwa_kipimo_cha_crcl varchar(100)  NULL;
+

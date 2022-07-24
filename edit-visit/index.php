@@ -247,7 +247,7 @@ while($row=mysqli_fetch_array($query))
                    </select>
                </div>
                                <div class="col-sm-12 col-xl-5 m-b-30">
-                                   <h4 class="sub-title">Dawa za kuathiri Figo</h4>
+                                   <h4 class="sub-title">Ametumia dawa za kuathiri Figo</h4>
                                    <select name="dawa_za_kuathiri_figo" class="form-control  form-control-default" required = "required">
                        <option value="<?php echo htmlentities($row1['dawa_za_kuathiri_figo']);?>"><?php echo htmlentities($row1['dawa_za_kuathiri_figo']);?></option>
                        <option value="ndio">Ndio (Acha Hastahili)</option>
@@ -256,6 +256,57 @@ while($row=mysqli_fetch_array($query))
 
 
                                    </select>
+                               </div>
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Amefanyiwa kipimo cha HBV</h4>
+
+                                   <select name="amenfanyiwa_kipimo_cha_hbv" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="<?php echo htmlentities($row1['amenfanyiwa_kipimo_cha_hbv']);?>"><?php echo htmlentities($row1['amenfanyiwa_kipimo_cha_hbv']);?></option>
+                                   <option value="ndio">1. Ndio</option>
+                       <option value="hapana">2. Hapana</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
+
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Majibu ya kipimo cha HBV</h4>
+
+                                   <select name="majibu_ya_kipimo_cha_hbv" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="<?php echo htmlentities($row1['majibu_ya_kipimo_cha_hbv']);?>"><?php echo htmlentities($row1['majibu_ya_kipimo_cha_hbv']);?></option>
+                                   <option value="hasi">1. Hasi</option>
+                       <option value="chanya">2. Chanya</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Amefanyiwa kipimo cha HCV</h4>
+
+                                   <select name="amenfanyiwa_kipimo_cha_hcv" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="<?php echo htmlentities($row1['amenfanyiwa_kipimo_cha_hcv']);?>"><?php echo htmlentities($row1['amenfanyiwa_kipimo_cha_hcv']);?></option>
+                                   <option value="ndio">1. Ndio</option>
+                       <option value="hapana">2. Hapana</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Majibu ya kipimo cha HCV</h4>
+
+                                   <select name="majibu_ya_kipimo_cha_hcv" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="<?php echo htmlentities($row1['majibu_ya_kipimo_cha_hcv']);?>"><?php echo htmlentities($row1['majibu_ya_kipimo_cha_hcv']);?></option>
+                                   <option value="hasi">1. Hasi</option>
+                       <option value="chanya">2. Chanya</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
+                               </div>
+                               <div class="col-sm-12 col-xl-3 m-b-30" >
+                                   <h4 class="sub-title">Amefanyiwa kipimo cha CrCL</h4>
+
+                                   <select name="amenfanyiwa_kipimo_cha_crcl" class="form-control form-control-default" required = "required" id="hide1">
+                                   <option value="<?php echo htmlentities($row1['amenfanyiwa_kipimo_cha_crcl']);?>"><?php echo htmlentities($row1['amenfanyiwa_kipimo_cha_crcl']);?></option>
+                                   <option value="ndio">1. Ndio</option>
+                       <option value="hapana">2. Hapana</option>
+                       <option value="haiusiki">3. Haiusiki</option>
+                               </select>
                                </div>
                                <div class="col-sm-12 col-xl-4 m-b-30">
                                    <h4 class="sub-title">Serum Creatinine Results (CrCL) Umol/L</h4>
@@ -431,6 +482,20 @@ while($row=mysqli_fetch_array($query))
 
 
 </select>
+</div>
+<div class="col-sm-12 col-xl-3 m-b-30">
+<h4 class="sub-title">Kondomu za kike</h4>
+<input type="text" class="form-control" name="kondomu_za_kike" value="<?php echo htmlentities($row1['kondomu_za_kike']);?>">
+</div>
+
+<div class="col-sm-12 col-xl-3 m-b-30">
+<h4 class="sub-title">Kondomu za kiume</h4>
+<input type="text" class="form-control" name="kondomu_za_kiume" value="<?php echo htmlentities($row1['kondomu_za_kiume']);?>">
+</div>
+
+<div class="col-sm-12 col-xl-3 m-b-30">
+<h4 class="sub-title">Idadi ya vielelezo vya elimu ya afya alivyopewa</h4>
+<input type="text" class="form-control" name="idadi_ya_vielelezo_vya_elimu_afya_alivyopewa" value="<?php echo htmlentities($row1['idadi_ya_vielelezo_vya_elimu_afya_alivyopewa']);?>">
 </div>
 <div class="col-sm-12 col-xl-3 m-b-30">
 <h4 class="sub-title">Huduma Nyingine alizopata</h4>
