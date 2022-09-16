@@ -18,10 +18,7 @@ if (isset($_POST['submit'])) {
  INSERT INTO backup(username,   backup_type )  
   VALUES('$username',  '$backup_type') ";
 if($link->query($query)===TRUE){
- if ($link->query($query1)===TRUE) {
-     # code...
-     header("location: offline-backup.php");
- }
+
  header("location: offline-backup.php");
 }
 }
