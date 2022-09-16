@@ -242,6 +242,7 @@ while($row=mysqli_fetch_array($query))
     var mselect  =  document.getElementById("gender_select");
     var mselectvalue = mselect.options[mselect.selectedIndex].value;
     var mdivone =  document.getElementById("is_pregnant_div");
+    var mdivtwo =  document.getElementById("is_breastfeeding_div");
 
       if (mselectvalue == "2") {
        mdivone.style.display = "block";
@@ -250,6 +251,7 @@ while($row=mysqli_fetch_array($query))
      
       else {
       mdivone.style.display = "none";
+      mdivtwo.style.display = "none";
       
       }  
 }

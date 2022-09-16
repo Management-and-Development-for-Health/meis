@@ -17,10 +17,7 @@
     INSERT INTO providers(firstname,   middlename, lastname, dob, gender, phone, age,user_id)  
      VALUES('$firstname',  '$middlename', '$lastname', '$dob', '$gender',  '$phone', '$age',  '$user_id') ";
 if($link->query($query)===TRUE){
-    if ($link->query($query1)===TRUE) {
-        # code...
-        header("location: ../provider-list/");
-    }
+
     header("location: ../provider-list/");
 }
 

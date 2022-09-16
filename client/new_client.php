@@ -67,15 +67,12 @@
         }
     }
 
-    $query1 = "INSERT INTO audit(user, activity) VALUES('$user_id', '$activity')";
+//    $query1 = "INSERT INTO audit(user, activity) VALUES('$user_id', '$activity')";
     $query = "
     INSERT INTO clients(firstname,   middlename, lastname, is_pregnant, breast_feeding, dob, gender, city_name, file_no, uic, facility)  
      VALUES('$firstname',  '$middlename', '$lastname',  '$is_pregnant', '$breast_feeding','$dob', '$gender',  '$city_name', '$serialNo', '$auto_uic', '$facility') ";
 if($link->query($query)===TRUE){
-    if ($link->query($query1)===TRUE) {
-        # code...
-        header("location: ../screening/?cid=$cid");
-    }
+
     header("location: ../screening/?cid=$cid");
 }
 
